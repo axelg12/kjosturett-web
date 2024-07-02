@@ -15,13 +15,13 @@ const distanceValueMap = {
   '1': 2,
   '1.6': 4,
   '1.8': 4,
-  '2': 4
+  '2': 4,
 };
 
 class CompareParties extends PureComponent {
   state = {
     selected: [],
-    isEditing: false
+    isEditing: false,
   };
   render() {
     const {
@@ -30,15 +30,13 @@ class CompareParties extends PureComponent {
       filterParties,
       replyDistance,
       score,
-      url
+      url,
     } = this.props;
 
     if (this.state.isEditing || filterParties.length < 2) {
       return (
         <div className={s.root}>
-          <h1 className={s.heading}>
-            Veldu stjórnmálaflokka til að bera saman
-          </h1>
+          <h1 className={s.heading}>Veldu systur til að bera saman</h1>
           <div className={s.chooseContainer}>
             <PartyGrid>
               {parties.map(party => {
@@ -53,12 +51,12 @@ class CompareParties extends PureComponent {
                       this.setState(({ selected }) => {
                         if (selected.includes(party.letter)) {
                           return {
-                            selected: selected.filter(x => x !== party.letter)
+                            selected: selected.filter(x => x !== party.letter),
                           };
                         }
 
                         return {
-                          selected: [...selected, party.letter]
+                          selected: [...selected, party.letter],
                         };
                       });
                     }}
@@ -116,7 +114,7 @@ class CompareParties extends PureComponent {
           onClick={() =>
             this.setState({
               isEditing: true,
-              selected: filterParties.map(x => x.letter)
+              selected: filterParties.map(x => x.letter),
             })
           }
         >
@@ -162,7 +160,7 @@ class CompareParties extends PureComponent {
               .map(question => ({
                 ...question,
                 replies: filterParties.map(p => p.reply[question.id - 1]),
-                distance: replyDistance[question.id - 1]
+                distance: replyDistance[question.id - 1],
               }))
               .sort((a, b) => {
                 if (a.distance > b.distance) return 1;

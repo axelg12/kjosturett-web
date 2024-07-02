@@ -1,9 +1,10 @@
 // @flow
 
-const URL = 'https://assets.kjosturett.is';
+// const URL = 'https://assets.kjosturett.is';
+const URL = 'localhost:3000';
 
 exports.getAssetUrl = (...assets) => {
-  return `${URL}/${assets.join('/')}.png`;
+  return `/${assets.join('/')}.jpg`;
 };
 
 exports.candidateImage = slug => {

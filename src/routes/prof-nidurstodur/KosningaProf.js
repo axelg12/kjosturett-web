@@ -265,8 +265,8 @@ class Kosningaprof extends PureComponent {
     return (
       <div className={s.lead}>
         <p>
-          Taktu kosningarpróf <strong>Kjóstu rétt</strong> til þess að sjá hvaða
-          flokkur passar best við þínar skoðanir. Því fleiri spurningum sem þú
+          Taktu <strong>afmælisprófið</strong> til þess að sjá hvaða systir þú
+          ert og passar best við þínar skoðanir. Því fleiri spurningum sem þú
           svarar, því nákvæmari niðurstöður færðu.
         </p>
         {showReset && (

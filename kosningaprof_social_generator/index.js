@@ -20,7 +20,7 @@ exports.handler = (event, context, callback) => {
     return {
       letter,
       slug: partiesImport[letter],
-      score: finalScore
+      score: finalScore,
     };
   });
 
@@ -54,7 +54,7 @@ exports.handler = (event, context, callback) => {
 
     image
       .in('-page', '+' + pos[0] + '+' + pos[1])
-      .in('./party-icons/' + party.slug + '.png')
+      .in('./party-icons/' + party.slug + '.jpg')
       .font('./Roboto-Bold.ttf')
       .fontSize(44)
       .drawText(pos[0] + 55, pos[1] + 225, party.score + '%');
@@ -70,10 +70,10 @@ exports.handler = (event, context, callback) => {
       callback(null, {
         statusCode: 200,
         headers: {
-          'Content-Type': 'image/png'
+          'Content-Type': 'image/png',
         },
         body: base64,
-        isBase64Encoded: true
+        isBase64Encoded: true,
       });
     });
 };

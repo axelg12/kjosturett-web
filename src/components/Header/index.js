@@ -10,7 +10,7 @@ import logo from '../../logo.svg';
 class Header extends PureComponent {
   state = {
     isTop: true,
-    isOpen: false
+    isOpen: false,
   };
   componentDidMount() {
     window.addEventListener('scroll', this.scroll);
@@ -28,43 +28,19 @@ class Header extends PureComponent {
 
     this.lastScrollPos = scroll;
     this.setState({
-      isTop: scroll < 120
+      isTop: scroll < 120,
     });
   };
   toggle(state) {
     const force = state == null;
     this.setState(({ isOpen }) => ({
-      isOpen: force ? !isOpen : state
+      isOpen: force ? !isOpen : state,
     }));
   }
   renderLinks() {
     const { page } = this.props;
 
     return [
-      <Link
-        afterClick={() => this.toggle(false)}
-        href="/"
-        key="/"
-        className={cx(s.politics, page === 'flokkar' ? s.active : null)}
-      >
-        Stjórnmálaflokkar
-      </Link>,
-      <Link
-        afterClick={() => this.toggle(false)}
-        href="/malefni/atvinnumal"
-        key="/malefni/atvinnumal"
-        className={cx(page === 'malefni' ? s.active : null)}
-      >
-        Málefni
-      </Link>,
-      <Link
-        afterClick={() => this.toggle(false)}
-        href="/kjorskra"
-        key="/kjorskra"
-        className={cx(page === 'kjorskra' ? s.active : null)}
-      >
-        Kjörstaðir
-      </Link>,
       <Link
         afterClick={() => this.toggle(false)}
         href="/kosningaprof"
@@ -81,14 +57,6 @@ class Header extends PureComponent {
       >
         Samanburður
       </Link>,
-      <Link
-        afterClick={() => this.toggle(false)}
-        className={cx(page === 'fyrri-kosningar' ? s.active : null)}
-        href="/fyrri-kosningar"
-        key="fyrri-kosningar"
-      >
-        Fyrri kosningar
-      </Link>
     ];
   }
   render() {
