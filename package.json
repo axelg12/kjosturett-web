@@ -63,7 +63,7 @@
   "devDependencies": {
     "assets-webpack-plugin": "^3.9.12",
     "autoprefixer": "^7.2.6",
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.3",
@@ -194,7 +194,7 @@
     "clean": "babel-node tools/run clean",
     "copy": "babel-node tools/run copy",
     "bundle": "npm run babel-node tools/run bundle",
-    "build": "npm run build-data && npm run babel-node tools/run build --release",
+    "build": "npm run build-data && babel-node tools/run build --release",
     "build-data": "cd data && ./build.sh",
     "build-stats": "npm run build -- --release --analyse",
     "deploy": "babel-node tools/run deploy",
