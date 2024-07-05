@@ -15,12 +15,12 @@ const Footer = () => (
           <img className={styles.logo} src={logo} alt="Logo" />
         </Link>
         <nav className={styles.nav}>
-          <Link className={styles.link} href={'/verkefnid'}>
+          {/* <Link className={styles.link} href={'/verkefnid'}>
             Um verkefnið
-          </Link>
-          <Link className={styles.link} href={'/fyrri-kosningar'}>
+          </Link> */}
+          {/* <Link className={styles.link} href={'/fyrri-kosningar'}>
             Fyrri kosningar
-          </Link>
+          </Link> */}
           <Link
             className={styles.link}
             target="_blank"
