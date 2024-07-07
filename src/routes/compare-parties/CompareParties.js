@@ -67,7 +67,7 @@ class CompareParties extends PureComponent {
           </div>
           {this.state.selected.length === 1 && (
             <p style={{ textAlign: 'center', marginTop: '20px' }}>
-              Veldu amk. einn flokk til viðbótar.
+              Veldu amk. eina systur til viðbótar.
             </p>
           )}
           {this.state.selected.length > 1 && (
