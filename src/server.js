@@ -17,11 +17,9 @@ import { ErrorPageWithoutStyle } from './routes/error/ErrorPage';
 import errorPageStyle from './routes/error/ErrorPage.css';
 import createFetch from './createFetch';
 import router from './router';
-// import schema from './data/schema';
 import assets from './assets.json'; // eslint-disable-line import/no-unresolved
 import configureStore from './store/configureStore';
 import config from './config';
-import kjorskra from './lib/kjorskra';
 import { setRuntimeVariable } from './actions/runtime';
 
 let redis;
@@ -107,7 +105,7 @@ app.get('/og-image-kjorskra/:coordinates', (req, res) => {
 });
 
 app.get('/kjorskra-lookup/:kennitala', (req, res, next) => {
-  kjorskra(req.params.kennitala).then(d => res.json(d), next);
+  // kjorskra(req.params.kennitala).then(d => res.json(d), next);
 });
 
 /**
@@ -131,11 +129,6 @@ app.post('/candidate/avatar', (req, res) => {
 
 // Used to gather replies from candidates and parties
 app.post('/konnun/replies', async (req, res) => {
-  return res.status(500).json({
-    success: false,
-    error: 'Kosningarnar eru búnar',
-  });
-
   const { token, reply } = req.body;
 
   const timestamp = Math.round(Date.now() / 1000);
@@ -146,16 +139,14 @@ app.post('/konnun/replies', async (req, res) => {
 
 // Used to gather replies from voters in an anonymous way
 app.post('/konnun/replies/all', async (req, res) => {
-  return res.status(500).json({
-    success: false,
-    error: 'Kosningarnar eru búnar',
-  });
+  console.log('got a reply', req.body);
   const { reply } = req.body;
 
   const token = uuid.v4();
   const timestamp = Math.round(Date.now() / 1000);
 
   await redis.set(`poll:public:${token}:${timestamp}`, reply);
+  console.log('whaat');
   res.json({ success: true });
 });
 

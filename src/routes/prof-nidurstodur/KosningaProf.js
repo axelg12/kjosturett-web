@@ -80,6 +80,7 @@ class Kosningaprof extends PureComponent {
   }
 
   onChange = id => value => {
+    console.log('change!!', id, value);
     this.setState(({ answers }) => {
       const newAnswers = {
         ...answers,
