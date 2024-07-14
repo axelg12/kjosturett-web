@@ -41,6 +41,7 @@ export default ({ params, url }) => {
           questions={questions}
           candidates={candidates}
           parties={parties}
+          renderSocialLinks={false}
           url={`https://kjosturett.is/embed/kosningaprof/${encodeURIComponent(
             params.nidurstodur
           )}`}

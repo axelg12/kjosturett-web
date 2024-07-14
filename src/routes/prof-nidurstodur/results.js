@@ -26,7 +26,7 @@ export default ({ params, url }) => {
   const questions = questionsBase.map(({ id, question }) => ({
     id,
     question,
-    myAnswer: myAnswers[id]
+    myAnswer: myAnswers[id],
   }));
 
   const socialPayload = parties
@@ -50,6 +50,7 @@ export default ({ params, url }) => {
           answers={answers}
           questions={questions}
           candidates={candidates}
+          renderSocialLinks={false}
           parties={parties}
           url={`https://kjosturett.is/kosningaprof/${encodeURIComponent(
             params.nidurstodur
@@ -57,6 +58,6 @@ export default ({ params, url }) => {
           ogImage={ogImage}
         />
       </Layout>
-    )
+    ),
   };
 };

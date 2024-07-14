@@ -72,7 +72,7 @@ class KosningaprofResults extends PureComponent {
       );
     }
 
-    const { ogImage, url } = this.props;
+    const { ogImage, url, renderSocialLinks } = this.props;
 
     return (
       <div>
@@ -87,31 +87,30 @@ class KosningaprofResults extends PureComponent {
             className: s.takeTest,
           })}
         </p>
-
-        {ogImage && <img src={ogImage} className={s.resultImage} />}
-
-        <p className={s.buttons}>
-          <Link
-            className={s.shareButton}
-            style={{ background: '#4760a5' }}
-            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              url
-            )}`}
-            target="_blank"
-          >
-            Deila niðurstöðum á Facebook
-          </Link>
-          <Link
-            className={s.shareButton}
-            style={{ background: '#1da0f2', marginLeft: '15px' }}
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-              'Mínar niðurstöður úr kosningaprófi Kjóstu rétt: '
-            )}&url=${encodeURIComponent(url)}&hashtags=kosningar`}
-            target="_blank"
-          >
-            Deila niðurstöðum á Twitter
-          </Link>
-        </p>
+        {renderSocialLinks && (
+          <p className={s.buttons}>
+            <Link
+              className={s.shareButton}
+              style={{ background: '#4760a5' }}
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                url
+              )}`}
+              target="_blank"
+            >
+              Deila niðurstöðum á Facebook
+            </Link>
+            <Link
+              className={s.shareButton}
+              style={{ background: '#1da0f2', marginLeft: '15px' }}
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                'Mínar niðurstöður úr kosningaprófi Kjóstu rétt: '
+              )}&url=${encodeURIComponent(url)}&hashtags=kosningar`}
+              target="_blank"
+            >
+              Deila niðurstöðum á Twitter
+            </Link>
+          </p>
+        )}
       </div>
     );
   }
@@ -140,6 +139,8 @@ class KosningaprofResults extends PureComponent {
       .slice(0, candidateCount);
 
     const partyScoreScalar = parties.length ? parties[0].score / 100 : 1;
+
+    console.log('partyScoreScalar', partyScoreScalar);
     return (
       <div className={s.root}>
         {this.renderIntro()}
