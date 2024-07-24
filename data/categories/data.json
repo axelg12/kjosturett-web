@@ -1,66 +1,6 @@
 [
   {
-    "name": "Atvinnumál",
-    "url": "atvinnumal"
-  },
-  {
-    "name": "Byggðarmál",
-    "url": "byggdarmal"
-  },
-  {
-    "name": "Evrópumál",
-    "url": "evropumal"
-  },
-  {
-    "name": "Heilbrigðismál",
-    "url": "heilbrigdismal"
-  },
-  {
-    "name": "Húsnæðismál",
-    "url": "husnaedismal"
-  },
-  {
-    "name": "Jafnréttismál",
-    "url": "jafnrettismal"
-  },
-  {
-    "name": "Menntamál",
-    "url": "menntamal"
-  },
-  {
-    "name": "Loftslagsmál",
-    "url": "loftslagsmal"
-  },
-  {
-    "name": "Samgöngumál",
-    "url": "samgongumal"
-  },
-  {
-    "name": "Sjávarútvegsmál",
-    "url": "sjavarutvegsmal"
-  },
-  {
-    "name": "Skattamál",
-    "url": "skattamal"
-  },
-  {
-    "name": "Sóttvarnarmál",
-    "url": "sottvarnarmal"
-  },
-  {
-    "name": "Stjórnarskrármál",
-    "url": "stjornarskrarmal"
-  },
-  {
-    "name": "Umhverfismál",
-    "url": "umhverfismal"
-  },
-  {
-    "name": "Útlendingamál",
-    "url": "utlendingamal"
-  },
-  {
-    "name": "Velferðarmál",
-    "url": "velferdarmal"
+    "name": "Sagan",
+    "url": "sagan"
   }
 ]
