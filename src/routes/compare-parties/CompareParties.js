@@ -31,7 +31,10 @@ class CompareParties extends PureComponent {
       replyDistance,
       score,
       url,
+      shareSocial,
     } = this.props;
+
+    console.log('this.state.isEditing', this.state.isEditing, filterParties);
 
     if (this.state.isEditing || filterParties.length < 2) {
       return (
@@ -109,24 +112,26 @@ class CompareParties extends PureComponent {
             })}
           </PartyGrid>
         </div>
-        <button
-          className={cx(s.edit, s.newSelection)}
-          onClick={() =>
-            this.setState({
-              isEditing: true,
-              selected: filterParties.map(x => x.letter),
-            })
-          }
-        >
-          Velja aðra flokka
-        </button>
+        {filterParties.length > 2 && (
+          <button
+            className={cx(s.edit, s.newSelection)}
+            onClick={() =>
+              this.setState({
+                isEditing: true,
+                selected: filterParties.map(x => x.letter),
+              })
+            }
+          >
+            Velja aðra flokka
+          </button>
+        )}
         {filterParties.length > 1 && (
           <h2
             id="score"
             className={s.scoreContainer}
-          >{`Flokkarnir eiga ${score.toFixed(0)}% samleið`}</h2>
+          >{`Systurnar eiga ${score.toFixed(0)}% samleið`}</h2>
         )}
-        {filterParties.length > 1 && (
+        {shareSocial && filterParties.length > 1 && (
           <p className={s.buttons}>
             <Link
               className={s.shareButton}
@@ -188,7 +193,7 @@ class CompareParties extends PureComponent {
                     </h4>
                     {distance === 0 && filterParties.length === 2 && (
                       <div>
-                        {`Báðir flokkarnir eru ${answers.textMap[
+                        {`Systurnar eru ${answers.textMap[
                           replies[0]
                         ].toLowerCase()}${
                           ['3', '6'].includes(replies[0]) ? 'ir gagnvart' : ''
@@ -197,7 +202,7 @@ class CompareParties extends PureComponent {
                     )}
                     {distance === 0 && filterParties.length > 2 && (
                       <div>
-                        {`Allir flokkarnir eru ${answers.textMap[
+                        {`Allir eru ${answers.textMap[
                           replies[0]
                         ].toLowerCase()}${
                           ['3', '6'].includes(replies[0]) ? 'ir gagnvart' : ''

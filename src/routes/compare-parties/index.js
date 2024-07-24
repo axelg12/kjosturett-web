@@ -12,32 +12,13 @@ parties.sort(function(a, b) {
 });
 
 const partyDeflections = {
-  B: 'Framsóknarflokksins',
-  C: 'Viðreisnar',
-  D: 'Sjálfstæðisflokksins',
-  F: 'Flokki fólksins',
-  M: 'Miðflokksins',
-  J: 'Sósíalistaflokksins',
-  P: 'Pírata',
-  S: 'Samfylkingarinnar',
-  O: 'Frjálslynda Lýðræðisflokksins',
-  V: 'Vinstri grænna'
+  A: 'Framsóknarflokksins',
+  Á: 'Viðreisnar',
 };
 
 const partyDeflectionsB = {
   A: 'Bjarta framtíð',
-  B: 'Framsóknarflokkinn',
-  C: 'Viðreisn',
-  D: 'Sjálfstæðisflokkinn',
-  F: 'Flokk fólksins',
-  M: 'Miðflokkinn',
-  J: 'Sósíalistaflokkinn',
-  P: 'Pírata',
-  R: 'Alþýðufylkinguna',
-  S: 'Samfylkinguna',
-  T: 'Dögun',
-  O: 'Frjálslynda Lýðræðisflokkinn',
-  V: 'Vinstri græn'
+  Á: 'Bjarta framtíð',
 };
 
 const valueMap = {
@@ -46,15 +27,21 @@ const valueMap = {
   3: 0,
   4: 0.8,
   5: 1,
-  6: null
+  6: null,
 };
 
 export default ({ url, params }) => {
   let { letters } = params;
 
+  console.log('letters 1', letters);
+
   if (!letters) letters = '';
 
-  letters = letters.split('').filter(letter => !!partyDeflections[letter]);
+  letters = letters
+    .split('')
+    .filter(letter => !!partyDeflections[letter.toUpperCase()]);
+
+  console.log('letters', letters);
 
   //Begin calculations
   let filterParties = letters.map(
@@ -130,8 +117,9 @@ export default ({ url, params }) => {
           replies={replies}
           replyDistance={replyDistance}
           url={url}
+          shareSocial={false}
         />
       </Layout>
-    )
+    ),
   };
 };
