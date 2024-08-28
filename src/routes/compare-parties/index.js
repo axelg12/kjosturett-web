@@ -108,7 +108,7 @@ export default ({ url, params }) => {
     description,
     path: url,
     component: (
-      <Layout page="bera-saman" title="Hversu líkir eru flokkarnir?">
+      <Layout page="bera-saman" title="Hversu líkar eru systurnar?">
         <CompareParties
           parties={parties}
           questions={questions}
