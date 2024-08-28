@@ -77,9 +77,8 @@ class KosningaprofResults extends PureComponent {
     return (
       <div>
         <p className={s.lead}>
-          Niðurstöður úr kosningaprófi <strong>Kjóstu rétt</strong>. Þú getur
-          lesið {this.renderLink('/malefni/atvinnumal', 'stefnumál flokkana')} í
-          þeim málefnum sem þér þykir mikilvæg.
+          Niðurstöður úr afmælisprófi <strong>Ásdísar og Auðar</strong>. Njótið
+          kvöldsins!
         </p>
 
         <p className={s.buttons}>
@@ -140,18 +139,11 @@ class KosningaprofResults extends PureComponent {
 
     const partyScoreScalar = parties.length ? parties[0].score / 100 : 1;
 
-    console.log('partyScoreScalar', partyScoreScalar);
     return (
       <div className={s.root}>
         {this.renderIntro()}
 
-        <h3 className={s.partiesHeader}>Stjórnmálaflokkar</h3>
-        <p className={s.nonLead}>
-          Flokkunum er raðað eftir afstöðu þeirra í kosningaprófinu samanborið
-          við þín svör. <strong>Smelltu á stjórnmálaflokk</strong> til þess að
-          skoða samanburð einstakra spurninga.{' '}
-        </p>
-
+        <h3 className={s.partiesHeader}>Þínar niðurstöður</h3>
         {answeredQuestions.length / questions.length < 0.5 && (
           <p className={s.nonLead}>
             Einungis {answeredQuestions.length}{' '}
