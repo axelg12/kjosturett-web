@@ -23,6 +23,7 @@ class PartySingle extends PureComponent {
         </div>
         <div className={s.topics}>
           <Collapsable
+            openByDefault
             items={
               categories &&
               categories.map(({ name, category, statement }) => ({
@@ -30,7 +31,9 @@ class PartySingle extends PureComponent {
                 title: name,
                 content:
                   statement ||
-                  `${party.name} hefur ekki skilað inn umfjöllun um ${name.toLowerCase()}.`,
+                  `${
+                    party.name
+                  } hefur ekki skilað inn umfjöllun um ${name.toLowerCase()}.`,
               }))
             }
           />

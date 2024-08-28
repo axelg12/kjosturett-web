@@ -1,1 +1,1 @@
-Hér er texti um mig Auði
+Auður er hlaupandi næringarfræðingur sem veit allt um skyr. Umhyggjusöm, einlæg, skemmtileg og sterk kona sem er oft rétt ókomin.
