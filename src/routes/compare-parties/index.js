@@ -72,7 +72,7 @@ export default ({ url, params }) => {
   const score = match(minReplies, maxReplies);
   const percentage = `${score.toFixed(0)}%`;
 
-  let title = 'Hversu líkir eru flokkarnir?';
+  let title = 'Hversu líkar eru systurnar?';
   let description =
     'Nú getur þú borið saman flokkana í ýmsum málum. Hvaða stjórnarmeirihlutar eru líklegir? Prófaðu þig áfram!';
 
